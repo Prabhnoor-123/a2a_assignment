@@ -1,19 +1,22 @@
 from fastmcp import FastMCP
-from config import settings
+# from models.config import settings
 import httpx
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 mcp = FastMCP("Tavily_MCP")
-
+TAVILY_API_KEY= os.getenv("TAVILY_API_KEY")
 
 @mcp.resource("resource://tavily/search/{query}")
 def search_tavily(query: str) -> dict:
     """Fetch search results from Tavily for a given query."""
-    if not settings.TAVILY_API_KEY:
+    if not TAVILY_API_KEY:
         return {"error": "Tavily API key not set."}
 
     url = "https://api.tavily.com/search"
     payload = {
-        "api_key": settings.TAVILY_API_KEY,
+        "api_key": TAVILY_API_KEY,
         "query": query,
         "include_answers": True,
         "include_sources": True,

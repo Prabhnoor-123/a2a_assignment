@@ -4,7 +4,7 @@ from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
-from a2a_server_executor import ResearchAgentExecutor  
+from A2A.Server.a2a_server_executor import ResearchAgentExecutor  
 
 logging.basicConfig(level=logging.INFO)
 

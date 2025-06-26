@@ -1,9 +1,9 @@
 import logging
 from fastmcp import Client
 from fastmcp.client.transports import StreamableHttpTransport
-from mcp_client import get_summary_from_mcp  
+from MCP.Client.mcp_client import get_summary_from_mcp  
 from urllib.parse import quote_plus
-from config import settings
+# from models.config import settings
 from a2a.server.agent_execution import AgentExecutor, RequestContext
 from a2a.server.events import EventQueue
 from a2a.utils import new_agent_text_message
