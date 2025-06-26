@@ -4,7 +4,7 @@ from a2a.server.apps import A2AStarletteApplication
 from a2a.server.request_handlers import DefaultRequestHandler
 from a2a.server.tasks import InMemoryTaskStore
 from a2a.types import AgentCapabilities, AgentCard, AgentSkill
-from agent_executor import ResearchAgentExecutor  
+from a2a_server_executor import ResearchAgentExecutor  
 
 logging.basicConfig(level=logging.INFO)
 
@@ -18,6 +18,7 @@ if __name__ == '__main__':
     )
 
     public_agent_card = AgentCard(
+        id='research_agent',
         name='Research AI Agent',
         description='Performs live research using Tavily and returns summarized data and references.',
         url='http://localhost:8000/',
