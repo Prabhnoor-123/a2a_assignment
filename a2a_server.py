@@ -21,7 +21,7 @@ if __name__ == '__main__':
         id='research_agent',
         name='Research AI Agent',
         description='Performs live research using Tavily and returns summarized data and references.',
-        url='http://localhost:8000/',
+        url='http://localhost:8000',
         version='1.0.0',
         defaultInputModes=['text'],
         defaultOutputModes=['text'],

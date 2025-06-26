@@ -30,7 +30,7 @@ if prompt := st.chat_input("Ask your research question..."):
     st.session_state.messages.append({"role": "user", "text": prompt})
 
     async def ask_research_agent(query: str) -> str:
-        async with httpx.AsyncClient() as httpx_client:
+        async with httpx.AsyncClient(timeout=30.0) as httpx_client:
             # Discover agent card
             resolver = A2ACardResolver(httpx_client=httpx_client, base_url=RESEARCH_AGENT_URL)
             agent_card = await resolver.get_agent_card(relative_card_path=AGENT_CARD_PATH)
