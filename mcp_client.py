@@ -1,13 +1,14 @@
 # mcp_client.py
 
 import asyncio
+from config import settings
 from urllib.parse import quote_plus
 from fastmcp import Client
 from fastmcp.client.transports import StreamableHttpTransport
 import google.generativeai as genai
 
 # Configure Gemini
-genai.configure(api_key="AIzaSyAKhKuDTaQzgiDxtR-LPng9LP9rsY8N1DQ")
+genai.configure(api_key=settings.gemini_api_key)
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 transport = StreamableHttpTransport(url="http://localhost:8001/mcp")

@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     AZURE_OPENAI_KEY_LLM: str
     AZURE_OPENAI_API_VERSION_LLM: str
     TAVILY_API_KEY: str 
+    gemini_api_key:str
 
 
     class Config:
